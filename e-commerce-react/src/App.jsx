@@ -2,6 +2,7 @@ import Filters from "./Components/Filters";
 import Home from "./Components/ProductList/Home";
 import Cart from "./Components/ShoppingCart/Cart";
 import styled, { createGlobalStyle } from "styled-components";
+import { ProductList } from "./assets/productList";
 
 const GlobalStyled = createGlobalStyle`
   html {
@@ -27,7 +28,7 @@ function App() {
     <MainContainer>
       <GlobalStyled />
       <Filters />
-      <Home />
+      <Home ProductList={ProductList} />
       <Cart />
     </MainContainer>
   );
