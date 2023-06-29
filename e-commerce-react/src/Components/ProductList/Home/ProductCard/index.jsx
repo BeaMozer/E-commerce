@@ -1,16 +1,16 @@
 import React from "react";
 import { Card } from "./style";
 
-const ProductCard = () => {
+const ProductCard = ({ productName, productValue, productImage }) => {
   return (
     <Card>
       <div className="image-card">
-        <p>ProductCard</p>
+        <img src={productImage} />
       </div>
 
       <div className="description-card">
-        <p>Nome do Produto</p>
-        <p>Valor</p>
+        <p>{productName}</p>
+        <p>{productValue}</p>
         <button>Adicionar ao Carrinho</button>
       </div>
     </Card>

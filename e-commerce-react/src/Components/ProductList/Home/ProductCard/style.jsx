@@ -14,6 +14,11 @@ export const Card = styled.div`
     align-items: center;
     height: 70%;
     border: 1px solid black;
+
+    img {
+      width: 40rem;
+      max-height: 28rem;
+    }
   }
 
   .description-card {
@@ -23,7 +28,6 @@ export const Card = styled.div`
     padding: 1rem;
 
     button {
-      margin-top: 1rem;
       width: 60%;
       height: 3rem;
       align-self: center;
