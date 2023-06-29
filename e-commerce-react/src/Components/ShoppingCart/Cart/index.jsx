@@ -1,12 +1,14 @@
 import React from "react";
 import Items from "./Items";
+import { Aside } from "./style";
 
 const Cart = () => {
   return (
-    <div>
-      Cart
+    <Aside>
+      <h2>Cart</h2>
       <Items />
-    </div>
+      <p>Valor Total: 0</p>
+    </Aside>
   );
 };
 
