@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import { Main } from "./style";
 
 const Home = (props) => {
-  const { ProductList, handleChange } = props;
+  const { ProductList, handleChange, amount, setAmount, cart, setCart } = props;
 
   const [ordination, setOrdination] = useState("");
 
@@ -20,6 +20,9 @@ const Home = (props) => {
             value={ordination}
             onChange={(event) => handleChange(event, setOrdination)}
           >
+            <option disabled value="">
+              Selecione
+            </option>
             <option value="crescent">Crescente</option>
             <option value="decreasing">Decrescente</option>
           </select>
