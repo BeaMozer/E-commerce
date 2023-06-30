@@ -38,9 +38,29 @@ function App() {
   return (
     <MainContainer>
       <GlobalStyled />
-      <Filters />
-      <Home ProductList={ProductList} handleChange={handleChange} />
-      <Cart />
+      <Filters
+        minFilter={minFilter}
+        setMinFilter={setMinFilter}
+        maxFilter={maxFilter}
+        setMaxFilter={setMaxFilter}
+        searchFilter={searchFilter}
+        setSearchFilter={setSearchFilter}
+        handleChange={handleChange}
+      />
+      <Home
+        ProductList={ProductList}
+        amount={amount}
+        setAmount={setAmount}
+        cart={cart}
+        setCart={setCart}
+        handleChange={handleChange}
+      />
+      <Cart
+        amount={amount}
+        setAmount={setAmount}
+        cart={cart}
+        setCart={setCart}
+      />
     </MainContainer>
   );
 }
