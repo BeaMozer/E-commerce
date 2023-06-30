@@ -3,6 +3,7 @@ import Home from "./Components/ProductList/Home";
 import Cart from "./Components/ShoppingCart/Cart";
 import styled, { createGlobalStyle } from "styled-components";
 import { ProductList } from "./assets/productList";
+import { useState } from "react";
 
 const GlobalStyled = createGlobalStyle`
   html {
@@ -24,11 +25,21 @@ const MainContainer = styled.main`
 `;
 
 function App() {
+  const [minFilter, setMinFilter] = useState("");
+  const [maxFilter, setMaxFilter] = useState("");
+  const [searchFilter, setSearchFilter] = useState("");
+  const [cart, setCart] = useState("");
+  const [amount, setAmount] = useState("");
+
+  const handleChange = (event, setState) => {
+    setState(event.target.value);
+  };
+
   return (
     <MainContainer>
       <GlobalStyled />
       <Filters />
-      <Home ProductList={ProductList} />
+      <Home ProductList={ProductList} handleChange={handleChange} />
       <Cart />
     </MainContainer>
   );

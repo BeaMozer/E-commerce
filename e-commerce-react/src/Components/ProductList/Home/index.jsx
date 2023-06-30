@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 import { Main } from "./style";
 
 const Home = (props) => {
-  const { ProductList } = props;
+  const { ProductList, handleChange } = props;
+
+  const [ordination, setOrdination] = useState("");
 
   return (
     <Main>
@@ -12,7 +14,12 @@ const Home = (props) => {
 
         <div className="container-order">
           <label htmlFor="order">Ordenação:</label>
-          <select name="order" id="order">
+          <select
+            name="order"
+            id="order"
+            value={ordination}
+            onChange={(event) => handleChange(event, setOrdination)}
+          >
             <option value="crescent">Crescente</option>
             <option value="decreasing">Decrescente</option>
           </select>
