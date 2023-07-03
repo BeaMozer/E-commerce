@@ -1,10 +1,10 @@
 import React from "react";
 import { ProductItems } from "./style";
 
-function Items() {
+function Items({ cart, setCart, addToCart }) {
   return (
     <ProductItems>
-      <p>x0 Nome do Produto</p>
+      <p>x0 {addToCart}</p>
       <button>remover</button>
     </ProductItems>
   );
