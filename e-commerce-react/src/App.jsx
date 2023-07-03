@@ -24,6 +24,7 @@ const MainContainer = styled.main`
   margin: 1rem;
   background-image: url("https://i.ytimg.com/vi/gqsGGwc67Tw/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoACxgOKAgwIABABGCogEyh_MA8=&rs=AOn4CLCFoK2wi-98QOcrzX_uXRWn-0_pzg");
   background-size: cover;
+  
 `;
 
 function App() {
