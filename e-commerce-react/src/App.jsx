@@ -2,7 +2,7 @@ import Filters from "./Components/Filters";
 import Home from "./Components/ProductList/Home";
 import Cart from "./Components/ShoppingCart/Cart";
 import styled, { createGlobalStyle } from "styled-components";
-import { ProductList } from "./assets/productList";
+import { productList } from "./assets/productList";
 import { useState } from "react";
 
 const GlobalStyled = createGlobalStyle`
@@ -22,6 +22,8 @@ const MainContainer = styled.main`
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   margin: 1rem;
+  background-image: url("https://i.ytimg.com/vi/gqsGGwc67Tw/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoACxgOKAgwIABABGCogEyh_MA8=&rs=AOn4CLCFoK2wi-98QOcrzX_uXRWn-0_pzg");
+  background-size: cover;
 `;
 
 function App() {
@@ -32,6 +34,10 @@ function App() {
   const [amount, setAmount] = useState("");
 
   const handleChange = (event, setState) => {
+    setState(event.target.value);
+  };
+
+  const addToCart = (event, setState) => {
     setState(event.target.value);
   };
 
@@ -48,18 +54,20 @@ function App() {
         handleChange={handleChange}
       />
       <Home
-        ProductList={ProductList}
+        productList={productList}
         amount={amount}
         setAmount={setAmount}
         cart={cart}
         setCart={setCart}
         handleChange={handleChange}
+        addToCart={addToCart}
       />
       <Cart
         amount={amount}
         setAmount={setAmount}
         cart={cart}
         setCart={setCart}
+        addToCart={addToCart}
       />
     </MainContainer>
   );
